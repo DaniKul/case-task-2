@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ru">
+<style>
+    table {
+        border: none;
+            width: 600px;
+        border-collapse: collapse;
+        position: relative;
+        left:600px;
+    }
+
+    td {
+border: 1px solid black;
+text-align: center;
+overflow: hidden;
+width: 120px;
+background-color: rgb(252, 243, 121);
+word-wrap: break-word;
+max-width: 120px;
+    }
+    table.table2 {
+        border: none;
+            width: 600px;
+        border-collapse: collapse;
+        position: relative;
+        margin-top: 20px;
+        left:600px;
+    }
+
+    td.td2 {
+border: 1px solid black;
+text-align: center;
+overflow: hidden;
+width: 120px;
+background-color: rgb(161, 161, 161);
+word-wrap: break-word;
+max-width: 120px;
+    }
+    table.table3 {
+        border: none;
+            width: 600px;
+        border-collapse: collapse;
+        background: transparent;
+        position: relative;
+        margin-top: 10px;
+        left:600px;
+    }
+    td.td3 {
+    border: none;
+    text-align: center;
+    overflow: hidden;
+    width: 120px;
+    background: transparent;
+    word-wrap: break-word;
+    max-width: 120px;
+    }
+    table.tableCategorize {
+        border: none;
+            width: 600px;
+        border-collapse: collapse;
+        position: relative;
+        margin-top: 20px;
+        left:600px;
+    }
+    table.tableCategorizeChoice {
+        border: none;
+            width: 600px;
+        border-collapse: collapse;
+        background: transparent;
+        position: relative;
+        margin-top: 10px;
+        left:600px;
+    }
+    td.tdCategorizeChoice {
+    border: none;
+    text-align: center;
+    overflow: hidden;
+    width: 120px;
+    background: transparent;
+    word-wrap: break-word;
+    max-width: 120px;
+    }
+    th {
+        padding: 5px;
+        border: none;
+        text-align: left;
+    }
+    tfoot{
+        border: none;
+    }
+    button{
+        position: relative;
+        left:1092px;           
+    }
+    .unmove {
+            position: fixed;
+            left: 595px;
+            top: 31px;
+        }
+    .brace {
+        position:sticky;
+        float: left;
+        bottom: 0;
+        left: 0;
+    }
+
+</style>
+<head>
+    <meta charset="utf-8">
+    <title>Кейс-задание</title>
+    </head>
+    <div class="content"></div>
+<table id="FirstTable">
+<thead>
+    <tr id="Row0">
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>E</td>
+    </tr>
+</thead>
+<tbody>
+    <tr id="Row1" contenteditable='true'>
+        <td>-</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr id="Row2" contenteditable='true'>
+        <td></td>
+        <td>-</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr id="Row3" contenteditable='true'>
+        <td></td>
+        <td></td>
+        <td>-</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr id="Row4" contenteditable='true'>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr id="Row5" contenteditable='true'>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>-</td>
+    </tr>
+    <tr id="Row6" contenteditable='true'>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr id="Row7" contenteditable='true'>
+        <td></td>
+        <td></td>
+        <td>-</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr id="Row8" contenteditable='true'>
+        <td></td>
+        <td>-</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr id="Row9" contenteditable='true'>
+        <td>-</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</tbody>
+<tfoot>
+    <tr>
+        <th>A: <select id="select0">
+            <option value="---">---</option>
+            <option value="Критерий">Критерий</option>
+            <option value="Сумма">Сумма</option>
+            <option value="Макс.">Макс.</option>
+            <option value="Мин.">Мин.</option>
+            <option value="Конкат">Конкат</option>
+        </select>
+        </th>
+        <th>B: <select id="select1">
+            <option value="---">---</option>
+            <option value="Критерий">Критерий</option>
+            <option value="Сумма">Сумма</option>
+            <option value="Макс.">Макс.</option>
+            <option value="Мин.">Мин.</option>
+            <option value="Конкат">Конкат</option>
+        </select>
+        </th>
+        <th>C: <select id="select2">
+            <option value="---">---</option>
+            <option value="Критерий">Критерий</option>
+            <option value="Сумма">Сумма</option>
+            <option value="Макс.">Макс.</option>
+            <option value="Мин.">Мин.</option>
+            <option value="Конкат">Конкат</option>
+        </select>
+        </th>
+        <th>D: <select id="select3">
+            <option value="---">---</option>
+            <option value="Критерий">Критерий</option>
+            <option value="Сумма">Сумма</option>
+            <option value="Макс.">Макс.</option>
+            <option value="Мин.">Мин.</option>
+            <option value="Конкат">Конкат</option>
+        </select>
+        </th>
+        <th>E: <select id="select4">
+            <option value="---">---</option>
+            <option value="Критерий">Критерий</option>
+            <option value="Сумма">Сумма</option>
+            <option value="Макс.">Макс.</option>
+            <option value="Мин.">Мин.</option>
+            <option value="Конкат">Конкат</option>
+        </select>
+        </th>
+    </tr>
+</tfoot>
+</table>
+
+<button type="submit" class="btn btn-success" id="bt" value="Show Grouped Table" onclick="createNewTable()">Сгруппировать</button>
+<div id="allBraces" class="unmove">  
+</div>
+<script>  
+var groupDataElementsExists = false; //проверка на наличие кнопок сортировки и списка алгоритмов сортировки результирующей таблицы
+var categorizeElementsExists = false; //проверка на наличие чекбоксов категоризации, кнопки категоризации, списка с выбором метода категоризации
+//var TableExists = false //проверка наличия результирующей таблицы
+var nullRowException = false; //флаг для проверки на пустую строку
+var tableData = []; //данные, введенные пользователем в виде двумерного массива (двумерный массив заполняется позже)
+var ResultArray = []; //данные, получаемые после группировки (и после сортировки) и вводимые в результирующую таблицу
+var CategorizeTableRowsCount = 2; //Количество строк в таблице, в которой задаются категории данных. Изначально там есть строка с заголовками и одна строка данных
+var CategorizeArray = []; //массив для записи категории данных
+var CategorizeResultArray = []; //результат категоризации
+
+function deleteElement(elementId){
+    if(document.getElementById(elementId)) {
+        document.getElementById(elementId).remove();
+    }
+}
+
+function collectTableData(elementId, tableArray) { //сбор данных с любой таблицы по её elementId в передаваемый двумерный массив данных
+    let table = document.getElementById(elementId);
+    let rowsCount = (elementId != "FirstTable") ? table.rows.length : table.rows.length - 1;
+    let colCount = table.rows[0].cells.length;
+    window[tableArray] = [];
+
+//создание массива с заполнением его нулями
+    for(let i = (elementId != "FirstTable") ? 1 : 0; i < rowsCount; i++) {
+        window[tableArray][i] = [];
+        for(let j = 0; j < colCount; j++) {
+            window[tableArray][i][j] = 0;
+        }
+    }
+//Наполнение массива элементами таблицы
+    for (let x = (elementId != "FirstTable") ? 1 : 0; x < rowsCount; x++) {
+        for (let y = 0; y < colCount; y++) { 
+            window[tableArray][x][y] = table.rows[x].cells[y].innerHTML;
+        }
+    }
+
+}
+
+function createResultTable() { //создание результирующей таблицы
+    /*https://www.geeksforgeeks.org/how-to-create-an-html-table-from-an-object-array-using-javascript/ - создание таблицы в javascript с использованием свойства innerHTML*/  
+    let tableHTML = '<table id="SecondTable" class="table2"><tr>';
+    tableHTML += '</tr>';
+    ResultArray.forEach(item => {
+        tableHTML += '<tr>';
+        Object.values(item).forEach(value => {
+            tableHTML += `<td width="600" class="td2">${value}</td>`;
+        });
+        tableHTML += '</tr>';
+    });
+    tableHTML += '</table>';
+    document.body.innerHTML += tableHTML;
+    makeDataGroupElements();
+    categorizeTable();
+}
+function categorizeTable() {
+    let columnCount = ResultArray[0].length + 1;
+    //Создание таблицы с категориями данных
+    let tableHTML = '<table id="categorizeTable" class="tableCategorize">';
+    for(let i = 0; i < CategorizeTableRowsCount; i++) {
+        tableHTML += '<tr>';
+        for(let j = 0; j < columnCount; j++) {
+            //копирование строки с заголовками
+            if(i == 0) {
+                if(j == columnCount - 1) {
+                    tableHTML += '<td width="600" class="td2">Код Категории</td>';
+                } else {
+                    tableHTML += '<td width="600" class="td2">' + ResultArray[i][j] + '</td>';
+                }
+            } else { //заполнение остальных строк
+                if(CategorizeArray.length > 0){
+                    tableHTML += '<td width="600" height="15" class="td2" contenteditable="true" >' + CategorizeArray[i][j] + '</td>';
+                } else {
+                    tableHTML += '<td width="600" height="15" class="td2" contenteditable="true" ></td>';
+                }   
+            }
+        }
+        tableHTML += '</tr>'
+    }
+    tableHTML += '</table>';
+    document.body.innerHTML += tableHTML;
+    let btnAdd = document.createElement("button");
+    btnAdd.id = ("CategorizeBtnAddRow");
+    btnAdd.style.left = "0px";
+    btnAdd.style.top = "0px";
+    btnAdd.setAttribute('onClick', 'addOrDeleteNewCategorizeRow(true)');
+    btnAdd.innerHTML = "Добавить строку";
+    document.body.appendChild(btnAdd);
+    if(CategorizeTableRowsCount > 2){
+    let btnDel = document.createElement("button");
+        btnDel.id = ("CategorizeBtnDelRow");
+        btnDel.style.left = "0px";
+        btnDel.style.top = "0px";
+        btnDel.setAttribute('onClick', 'addOrDeleteNewCategorizeRow(false)');
+        btnDel.innerHTML = "удалить строку";
+        document.body.appendChild(btnDel);
+    }
+    makeCategorizeElements();
+    
+}
+
+function addOrDeleteNewCategorizeRow(addOrDelete){
+    collectTableData('categorizeTable', 'CategorizeArray');
+    ['CategorizeResultTable', 'categorizeTable', 'CategorizeBtnAddRow', 'CategorizeBtnDelRow', 'categorizeElementsTable'].forEach(item =>{
+        deleteElement(item);
+    })
+    window['CategorizeResultArray'] = [];
+    CategorizeTableRowsCount = (addOrDelete) ? CategorizeTableRowsCount + 1 : CategorizeTableRowsCount - 1;
+    CategorizeArray.push([]);
+    if(addOrDelete) {
+        //Сразу же заполняем созданную строку пустыми значениями
+        for(let i = 0; i < CategorizeArray.length; i++){
+            window['CategorizeArray'][CategorizeArray.length - 1][i] = '';
+        }
+    } else {
+        window['CategorizeArray'].pop();
+    }
+    categorizeTable();
+}
+
+function sortArray(item) { //вызов функции сортировки в зависимости от выбранного алгоритма
+    columnCount = parseInt(item.id.substring(item.id.length-1, item.id.length))
+    let sortOption = document.getElementById("groupSelect")
+    switch(sortOption.options[sortOption.selectedIndex].value){
+        case "value0": bubbleSort(ResultArray, ResultArray.length, ResultArray[0].length, columnCount)
+        break
+        case "value1": ShakerSort(ResultArray, ResultArray.length, ResultArray[0].length, columnCount)
+        break
+    }
+    eraseTable()
+    createResultTable()
+}
+
+function makeDataGroupElements() { //функция для создания кнопок сортировки и выбора алгоритмов сортировки
+    groupDataElementsExists = true
+    //https://stackoverflow.com/questions/14643617/create-table-using-javascript
+    const body = document.body,
+    tbl = document.createElement('table');
+    tbl.id = "groupDataElementsTable";  
+    tbl.setAttribute("class", "table3");
+    for (let i = 0; i < 2; i++) {
+        const tr = tbl.insertRow();
+        for (let j = 0; j < ResultArray[0].length; j++) {
+            const td = tr.insertCell();
+            td.setAttribute('class', 'td3');
+            if(i == 0){
+                let btn = document.createElement("button");
+                btn.id = ("Sort" + j);
+                btn.style.left = "0px";
+                btn.style.top = "0px";
+                btn.setAttribute('onClick', 'sortArray(this)');
+                btn.innerHTML = "Сортировать";
+                td.appendChild(btn);
+            }
+            if(i == 1 && j == 0){
+                //создание выпадающего списка. Создаём один раз.
+                let select = document.createElement("select");
+                ["Пузырьковый", "Перемешивание"].forEach((text, index) => {
+                    var opt = new Option(text, "value" + index);
+                    select.add(opt);
+                })
+                select.id = ("groupSelect")
+                td.setAttribute('class', 'td3')
+                td.innerHTML = "Алгоритм сортировки: "
+                td.appendChild(select);
+            }
+        }
+    }
+    body.appendChild(tbl);
+}
+
+function makeCategorizeElements() { //функция для создания чекбоксов и кнопки категоризации, выбора метода категоризации
+    categorizeElementsExists = true
+    const body = document.body,
+    tbl = document.createElement('table');
+    tbl.id = "categorizeElementsTable"  
+    tbl.setAttribute("class", "tableCategorizeChoice")
+    for (let i = 0; i < CategorizeTableRowsCount; i++) {
+        const tr = tbl.insertRow();
+        for (let j = 0; j < ResultArray[0].length + 1; j++) {
+            const td = tr.insertCell();
+            td.setAttribute('class', 'tdCategorizeChoice')
+            if(i == 0){
+                if(j != ResultArray[0].length) {
+                    let checkbox = document.createElement('input');
+                    checkbox.type = "checkbox";
+                    checkbox.name = "checkboxColumn" + j;
+                    checkbox.value = false;
+                    checkbox.id = "checkboxIdColumn" + j;
+                    td.appendChild(checkbox)
+                } else {
+                    let btn = document.createElement("button")
+                    btn.id = ("CategorizeBtn")
+                    btn.style.left = "0px"
+                    btn.style.top = "0px"
+                    btn.setAttribute('onClick', 'CreateNewCategorizeTable()');
+                    btn.innerHTML = "Категоризировать"
+                    td.appendChild(btn)
+                }
+            }
+            if(i == 1 && j == 0) {
+                
+                //создание выпадающего списка. Создаём один раз.
+                let select = document.createElement("select");
+                ["С размножением", "Без размножения"].forEach((text, index) => {
+                    let opt = new Option(text, "value" + index);
+                    select.add(opt);
+                })
+                select.id = ("categorizeSelect")
+                td.setAttribute('class', 'tdCategorizeChoice')
+                td.innerHTML = "Метод категоризации: "
+                td.appendChild(select);
+            }
+        }
+    }
+    body.appendChild(tbl);
+}
+
+function CreateNewCategorizeTable(){
+    window['CategorizeResultArray'] = [];
+    deleteElement('CategorizeResultTable');
+    collectTableData('categorizeTable', 'CategorizeArray');
+    let oneCheckboxChecked = false;
+    for(let i = 0; i < CategorizeArray[1].length - 1; i++){
+        oneCheckboxChecked = (document.getElementById('checkboxIdColumn' + i).checked)
+        if(oneCheckboxChecked){
+            break
+        }
+    }
+    let hasNullInCategoryKey = false;
+    let isRepeatingCategoryKey = false;
+    let categorizeKeys = new Set();
+    for(let i = 1; i < CategorizeArray.length; i++) {
+        if(CategorizeArray[i][(CategorizeArray[1].length - 1)] == '') {
+            hasNullInCategoryKey = true;
+            break;
+        }
+        
+        if(categorizeKeys.has(CategorizeArray[i][(CategorizeArray[1].length - 1)])) {
+            isRepeatingCategoryKey = true;
+            break;
+        }
+        categorizeKeys.add(CategorizeArray[i][(CategorizeArray[1].length - 1)]);
+    }
+    if(isRepeatingCategoryKey || hasNullInCategoryKey || !oneCheckboxChecked) {
+        if(hasNullInCategoryKey) alert('Не для всех категорий указан код!');
+        if(isRepeatingCategoryKey) alert('У категорий должны быть уникальные коды!');
+        if(!oneCheckboxChecked) alert('Нужно выбрать хотя бы одну колонку для участия её в категоризации! (поставить галочку под колонкой)');
+    } else {
+        categorizeData();
+    }
+}
+
+function categorizeData(){
+    let categories = new Map();
+    //Здесь заполняется Map по всем указанным в таблице категориям
+    for(let i = 1; i < CategorizeArray.length; i++){
+        let categorizeValue = [];
+        for(let j = 0; j < CategorizeArray[1].length - 1; j++){
+            if(document.getElementById('checkboxIdColumn' + j).checked){
+                categorizeValue.push(CategorizeArray[i][j]);
+            }
+        }
+        categories.set(CategorizeArray[i][CategorizeArray[1].length - 1], categorizeValue);
+    }
+    let n = 0 //индекс для формирования массива с данными после категоризации
+    //Категоризация сгруппированных данных
+    for(let i = 1; i < ResultArray.length; i++){
+        let rowCategorizeValue = [];
+        for(let j = 0; j < ResultArray[0].length; j++){
+            if(document.getElementById('checkboxIdColumn' + j).checked){
+                rowCategorizeValue.push(ResultArray[i][j]);
+            }
+        }
+
+        for(const [key, value] of categories){
+            let valuesAreEqual = false;
+            //Если значения у строки из таблицы группированных данных и элемента Map совпадают, то создаем строку в таблицу с категоризированными данными
+            for (let k = 0; k < value.length; k++)
+                if (rowCategorizeValue[k] != value[k]){
+                    valuesAreEqual = false;
+                    break;
+                } else {
+                    valuesAreEqual = true;
+                }
+            if(valuesAreEqual){
+                //Если формируется первая строка, то перед ней заполняются заголовки колонок
+                if(n == 0){
+                    window['CategorizeResultArray'][n] = [];
+                    for(let m = 0; m < CategorizeArray[1].length; m++) {
+                    window['CategorizeResultArray'][n][m] = (m < CategorizeArray[1].length - 1) ? ResultArray[n][m] : "Код Категории";
+                    }
+                    n++;
+                }
+                window['CategorizeResultArray'][n] = [];
+                for(let m = 0; m < CategorizeArray[1].length; m++) {
+                    window['CategorizeResultArray'][n][m] = (m < CategorizeArray[1].length - 1) ? ResultArray[i][m] : key;
+                }
+                n++;
+                if(document.getElementById('categorizeSelect').selectedIndex == 1) {
+                        break;
+                    }
+            }
+        }
+    }
+
+    let tableHTML = '<table id="CategorizeResultTable" class="table2"><tr>';
+    tableHTML += '</tr>';
+    CategorizeResultArray.forEach(item => {
+        tableHTML += '<tr>';
+        Object.values(item).forEach(value => {
+            tableHTML += `<td width="600" class="td2">${value}</td>`;
+        });
+        tableHTML += '</tr>';
+    });
+    tableHTML += '</table>';
+    document.body.innerHTML += tableHTML;
+}
+
+function eraseTable() //функция удаления результирующей таблицы (чтобы не появлялась повторно) и всего, что после нее
+{
+    ['CategorizeResultTable', 'groupDataElementsTable', 'SecondTable', 'categorizeTable', 'CategorizeBtnAddRow', 'CategorizeBtnDelRow', 'categorizeElementsTable'].forEach(item =>{
+        deleteElement(item);
+    })
+    window['CategorizeResultArray'] = [];
+    window['CategorizeArray'] = [];
+    document.getElementById("allBraces").innerHTML = ""
+}
+
+function groupBraceCreate(rows) { //создание скобочек слева от первой таблицы
+    let brace = document.createElement('img')
+    //brace.setAttribute("class","groupBrace");
+    brace.setAttribute('class','brace')
+    brace.setAttribute("id","groupBrace");
+    brace.setAttribute("src", "skobka.png");
+    brace.setAttribute("height", 21*(rows+1));
+    brace.setAttribute("width","10");
+    document.getElementById('allBraces').appendChild(brace);
+    document.getElementById('allBraces').appendChild(document.createElement('br'));
+}
+
+function bubbleSort(arr, n, m, chose) //https://www.geeksforgeeks.org/bubble-sort-algorithm/ пример сортировки пузырьком для одномерного массива
+{
+    var temp
+    var swapped
+    for (let i = 1; i < n - 1; i++) {
+        swapped = false
+        for (let j = 1; j < n - i; j++) {
+            if (Number.parseFloat(arr[j][chose]) > Number.parseFloat(arr[j + 1][chose])) {
+                for(let f = 0; f < m; f++) {
+                    // замена строк местами
+                    temp = arr[j][f]
+                    arr[j][f] = arr[j + 1][f];
+                    arr[j + 1][f] = temp;
+                }
+                swapped = true;
+            }
+        }
+        //выход из цикла, если два элемента не были обменены
+        if (swapped == false)
+        break;
+    }   
+}
+
+function ShakerSort(arr, n, m, chose) //https://www.geeksforgeeks.org/cocktail-sort/?ref=header_search пример сортировки перемешиванием для одномерного массива
+{
+    let swapped = true;
+    let start = 0;
+    let end = n;
+
+    while (swapped == true) {
+        swapped = false;
+        for (let i = start; i < end - 1; ++i) {
+            if (Number.parseFloat(arr[i][chose]) > Number.parseFloat(arr[i + 1][chose])) {
+                let temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                swapped = true;
+            }
+        }
+        if (swapped == false)
+        break
+        swapped = false;
+        end = end - 1;
+        for (let i = end - 1; i >= start; i--) {
+            if (Number.parseFloat(arr[i][chose]) > Number.parseFloat(arr[i + 1][chose])) {
+                let temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                swapped = true;
+            }
+        }
+        start = start + 1;
+    }
+}
+
+function createNewTable() { //функция создания новой таблицы
+    eraseTable();
+    tableData = [];
+    ResultArray = [];
+    CategorizeArray = [];
+    CatResultArray = [];
+    nullRowException = true;
+    collectTableData("FirstTable", 'tableData');
+    GroupData();
+    if(!nullRowException){
+        createResultTable();
+    }
+}
+
+function createNewCategorizeTable() { //функция создания новой таблицы с результатами категоризации
+    if(document.getElementById('categorizeTable')) {
+        document.getElementById('categorizeTable').remove();
+    }
+    collectTableData("categorizeTable", 'CategorizeArray');
+}
+
+
+function GroupData() { //функция группировки
+    var optionArr = []; //массив, в который будут записаны варианты группировки, выбранные пользователем
+    for(let i = 0; i < 5; i++) {
+        let selectElement = document.getElementById('select' + i)
+        optionArr.push(selectElement.options[selectElement.selectedIndex].value) //https://sky.pro/media/poluchenie-vybrannogo-znacheniya-iz-vypadayushhego-spiska-v-javascript/ получение значения из выпадающего списка
+    }
+    if(optionArr.includes("Критерий")) {
+        let CriteriaRow1 = ""
+        let CriteriaRow2 = ""
+        let ResultArrayX = 0
+        let ResultArrayY = 0
+        let compareFlag
+        let columnCount = 0
+        let optionArrCount = 0
+        //Формирование заголовка результирующей таблицы
+        ResultArray[ResultArrayX] = []
+        while(true) {
+            if(optionArr[optionArrCount] != "---") {
+                ResultArray[ResultArrayX][columnCount] = tableData[0][optionArrCount];
+                columnCount++;
+            }
+            optionArrCount++
+            if(optionArrCount == tableData[0].length) break
+        }
+        ResultArrayX++
+        columnCount = 0
+        optionArrCount = 0
+
+        //Блок кода с группировкой
+        for (let i = 1; i < tableData.length; i++) {
+            //запись значений с первой строки для сравнения "Критериев"
+            nullRowException = true;
+            for(let j = 0; j < tableData[0].length; j++) {
+                if(optionArr[j] != "---") {
+                    CriteriaRow1 += (optionArr[j] == "Критерий") ? (tableData[i][j] != '<br>' && tableData[i][j] != null && tableData[i][j] != '') ? tableData[i][j] + "-" : "" : "";
+                    if(nullRowException){
+                        nullRowException = (tableData[i][j] == null || tableData[i][j] == '<br>' || tableData[i][j] == '') ? true : false;
+                    }
+                }
+            }
+            if(!nullRowException) { //если строка не пустая, то начинается группировка
+                ResultArray[ResultArrayX] = []
+                while(true) {
+                    if(optionArr[optionArrCount] != "---"){
+                        ResultArray[ResultArrayX][columnCount] = tableData[i][optionArrCount]
+                        columnCount++
+                    }
+                    optionArrCount++
+                    if(optionArrCount == tableData[0].length) break
+                }
+                columnCount = 0
+                optionArrCount = 0
+                let rowsCount = 0
+                for (let x = i+1 ; x < tableData.length; x++) { //запись значений со второй строки для сравнения "Критериев"
+                    for(let j = 0; j < tableData[0].length; j++) {
+                        CriteriaRow2 += (optionArr[j] == "Критерий") ? (tableData[x][j] != '<br>' && tableData[x][j] != null && tableData[x][j] != '') ? tableData[x][j] + "-" : "" : ""
+                    }
+                    compareFlag = (CriteriaRow1 == CriteriaRow2) ? true : false //флаг, отражающий равенство критериев двух строк
+                    for (let y = 0; y < tableData[0].length; y++) { //программа проходит по столбцам первой таблицы и производит группировку по заданным значениям для формирования результирующей таблицы
+                        switch(optionArr[y]) {
+                            case "---":
+                            break
+                            case "Критерий":
+                            if(compareFlag) {
+                                ResultArray[ResultArrayX][ResultArrayY] = tableData[x][y]
+                                ResultArrayY++
+                            }
+                            break
+                            case "Сумма": 
+                            if(compareFlag) {
+                                let ArSum1 = parseFloat (ResultArray[ResultArrayX][ResultArrayY])
+                                let ArSum2 = parseFloat (tableData[x][y])
+                                if(!isNaN(ArSum1) &  !isNaN(ArSum2)) {
+                                    ResultArray[ResultArrayX][ResultArrayY] = ArSum1 + ArSum2
+                                }
+                                else{
+                                    ResultArray[ResultArrayX][ResultArrayY] = (!isNaN(ArSum1)) ? ArSum1 : 0
+                                    ResultArray[ResultArrayX][ResultArrayY] = (!isNaN(ArSum2)) ? ArSum2 : 0
+                                }
+                                ResultArrayY++
+                            }
+                            break
+                            case "Макс.": 
+                            if(compareFlag) {
+                                ResultArray[ResultArrayX][ResultArrayY] = (tableData[i][y]>tableData[x][y]) ? tableData[i][y] : tableData[x][y]
+                                ResultArrayY++
+                            }
+                            break
+                            case "Мин.":
+                            if(compareFlag) { 
+                                ResultArray[ResultArrayX][ResultArrayY] = (tableData[i][y]<tableData[x][y]) ? tableData[i][y] : tableData[x][y]
+                                ResultArrayY++
+                            }
+                            break
+                            case "Конкат": 
+                            if(compareFlag) {
+                                ResultArray[ResultArrayX][ResultArrayY] = tableData[i][y]+tableData[x][y]
+                                ResultArrayY++
+                            }
+                            break
+                        }
+                    }       
+                    if(compareFlag) { //"слияние" строк
+                        tableData.splice(x,1)
+                        rowsCount++
+                        x--
+                    }  
+                    CriteriaRow2 = ''
+                    ResultArrayY = 0
+                }
+                if(!nullRowException){
+                    groupBraceCreate(rowsCount);
+                }
+                rowsCount = 0;
+            }
+            if(!nullRowException) { 
+                ResultArrayX++ 
+            }
+            else{
+                alert('В каждой строке таблицы должно быть хотя бы одно значение!')
+                break
+            }
+            CriteriaRow1 = ''
+        }
+    }
+    else{
+        alert('Как минимум один столбец должен быть критерием!')
+    }
+}
+</script>
+</html>
