@@ -244,6 +244,7 @@ var groupDataElementsExists = false; //проверка на наличие кн
 var categorizeElementsExists = false; //проверка на наличие чекбоксов категоризации, кнопки категоризации, списка с выбором метода категоризации
 //var TableExists = false //проверка наличия результирующей таблицы
 var nullRowException = false; //флаг для проверки на пустую строку
+var optionArrIndex = []; //Индексы выбранных агрегирующих функций, чтобы выставлять их в выпадающие списки
 var tableData = []; //данные, введенные пользователем в виде двумерного массива (двумерный массив заполняется позже)
 var ResultArray = []; //данные, получаемые после группировки (и после сортировки) и вводимые в результирующую таблицу
 var CategorizeTableRowsCount = 2; //Количество строк в таблице, в которой задаются категории данных. Изначально там есть строка с заголовками и одна строка данных
@@ -291,6 +292,9 @@ function createResultTable() { //создание результирующей �
     });
     tableHTML += '</table>';
     document.body.innerHTML += tableHTML;
+    for (let i = 0; i < tableData[0].length; i++){
+        document.getElementById('select' + i).selectedIndex = optionArrIndex[i];
+    }
     makeDataGroupElements();
     categorizeTable();
 }
@@ -320,6 +324,9 @@ function categorizeTable() {
     }
     tableHTML += '</table>';
     document.body.innerHTML += tableHTML;
+    for (let i = 0; i < tableData[0].length; i++){
+        document.getElementById('select' + i).selectedIndex = optionArrIndex[i];
+    }
     let btnAdd = document.createElement("button");
     btnAdd.id = ("CategorizeBtnAddRow");
     btnAdd.style.left = "0px";
@@ -556,6 +563,9 @@ function categorizeData(){
     });
     tableHTML += '</table>';
     document.body.innerHTML += tableHTML;
+    for (let i = 0; i < tableData[0].length; i++){
+        document.getElementById('select' + i).selectedIndex = optionArrIndex[i];
+    }
 }
 
 function eraseTable() //функция удаления результирующей таблицы (чтобы не появлялась повторно) и всего, что после нее
@@ -647,6 +657,7 @@ function createNewTable() { //функция создания новой таб�
     if(!nullRowException){
         createResultTable();
     }
+    window['optionArrIndex'] = [];
 }
 
 function createNewCategorizeTable() { //функция создания новой таблицы с результатами категоризации
@@ -662,6 +673,7 @@ function GroupData() { //функция группировки
     for(let i = 0; i < 5; i++) {
         let selectElement = document.getElementById('select' + i)
         optionArr.push(selectElement.options[selectElement.selectedIndex].value) //https://sky.pro/media/poluchenie-vybrannogo-znacheniya-iz-vypadayushhego-spiska-v-javascript/ получение значения из выпадающего списка
+        window['optionArrIndex'].push(selectElement.selectedIndex);
     }
     if(optionArr.includes("Критерий")) {
         let CriteriaRow1 = ""
@@ -753,7 +765,8 @@ function GroupData() { //функция группировки
                             break
                             case "Конкат": 
                             if(compareFlag) {
-                                ResultArray[ResultArrayX][ResultArrayY] = tableData[i][y]+tableData[x][y]
+                                tableData[i][y] = tableData[i][y]+tableData[x][y];
+                                ResultArray[ResultArrayX][ResultArrayY] = tableData[i][y];
                                 ResultArrayY++
                             }
                             break
