@@ -298,6 +298,45 @@ function createResultTable() { //создание результирующей �
     makeDataGroupElements();
     categorizeTable();
 }
+
+function makeDataGroupElements() { //функция для создания кнопок сортировки и выбора алгоритмов сортировки
+    groupDataElementsExists = true
+    //https://stackoverflow.com/questions/14643617/create-table-using-javascript
+    const body = document.body,
+    tbl = document.createElement('table');
+    tbl.id = "groupDataElementsTable";  
+    tbl.setAttribute("class", "table3");
+    for (let i = 0; i < 2; i++) {
+        const tr = tbl.insertRow();
+        for (let j = 0; j < ResultArray[0].length; j++) {
+            const td = tr.insertCell();
+            td.setAttribute('class', 'td3');
+            if(i == 0){
+                let btn = document.createElement("button");
+                btn.id = ("Sort" + j);
+                btn.style.left = "0px";
+                btn.style.top = "0px";
+                btn.setAttribute('onClick', 'sortArray(this)');
+                btn.innerHTML = "Сортировать";
+                td.appendChild(btn);
+            }
+            if(i == 1 && j == 0){
+                //создание выпадающего списка. Создаём один раз.
+                let select = document.createElement("select");
+                ["Пузырьковый", "Перемешивание"].forEach((text, index) => {
+                    var opt = new Option(text, "value" + index);
+                    select.add(opt);
+                })
+                select.id = ("groupSelect")
+                td.setAttribute('class', 'td3')
+                td.innerHTML = "Алгоритм сортировки: "
+                td.appendChild(select);
+            }
+        }
+    }
+    body.appendChild(tbl);
+}
+
 function categorizeTable() {
     let columnCount = ResultArray[0].length + 1;
     //Создание таблицы с категориями данных
@@ -354,10 +393,10 @@ function addOrDeleteNewCategorizeRow(addOrDelete){
     })
     window['CategorizeResultArray'] = [];
     CategorizeTableRowsCount = (addOrDelete) ? CategorizeTableRowsCount + 1 : CategorizeTableRowsCount - 1;
-    CategorizeArray.push([]);
     if(addOrDelete) {
+        window['CategorizeArray'].push([]);
         //Сразу же заполняем созданную строку пустыми значениями
-        for(let i = 0; i < CategorizeArray.length; i++){
+        for(let i = 0; i < CategorizeArray[1].length; i++){
             window['CategorizeArray'][CategorizeArray.length - 1][i] = '';
         }
     } else {
@@ -377,44 +416,6 @@ function sortArray(item) { //вызов функции сортировки в �
     }
     eraseTable()
     createResultTable()
-}
-
-function makeDataGroupElements() { //функция для создания кнопок сортировки и выбора алгоритмов сортировки
-    groupDataElementsExists = true
-    //https://stackoverflow.com/questions/14643617/create-table-using-javascript
-    const body = document.body,
-    tbl = document.createElement('table');
-    tbl.id = "groupDataElementsTable";  
-    tbl.setAttribute("class", "table3");
-    for (let i = 0; i < 2; i++) {
-        const tr = tbl.insertRow();
-        for (let j = 0; j < ResultArray[0].length; j++) {
-            const td = tr.insertCell();
-            td.setAttribute('class', 'td3');
-            if(i == 0){
-                let btn = document.createElement("button");
-                btn.id = ("Sort" + j);
-                btn.style.left = "0px";
-                btn.style.top = "0px";
-                btn.setAttribute('onClick', 'sortArray(this)');
-                btn.innerHTML = "Сортировать";
-                td.appendChild(btn);
-            }
-            if(i == 1 && j == 0){
-                //создание выпадающего списка. Создаём один раз.
-                let select = document.createElement("select");
-                ["Пузырьковый", "Перемешивание"].forEach((text, index) => {
-                    var opt = new Option(text, "value" + index);
-                    select.add(opt);
-                })
-                select.id = ("groupSelect")
-                td.setAttribute('class', 'td3')
-                td.innerHTML = "Алгоритм сортировки: "
-                td.appendChild(select);
-            }
-        }
-    }
-    body.appendChild(tbl);
 }
 
 function makeCategorizeElements() { //функция для создания чекбоксов и кнопки категоризации, выбора метода категоризации
